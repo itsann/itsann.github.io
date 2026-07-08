@@ -1,12 +1,17 @@
 /* Milk Run site — shared styles. Brand: wine on cream, Manrope. */
 :root {
   --wine: #5c2c45;
+  --wine-deep: #472035;
+  --wine-soft: #ecd9e4;
   --cream: #f1ede3;
   --ink: #2b1a24;
   --muted: #7d6b75;
   --card: #ffffff;
+  --pink: #f3dce9;
+  --r: 22px;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   font-family: 'Manrope', -apple-system, 'Segoe UI', sans-serif;
   background: var(--cream);
@@ -14,25 +19,145 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
-.wrap { max-width: 680px; margin: 0 auto; padding: 48px 24px 96px; }
-header.site { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 48px; }
-.brand { font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--wine); font-size: 14px; text-decoration: none; }
-nav a { color: var(--muted); text-decoration: none; font-size: 14px; margin-left: 16px; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 28px 24px 96px; }
+
+/* ---- header ---------------------------------------------------------- */
+header.site { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+.brand {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--wine); font-size: 14px; text-decoration: none;
+}
+.brand .drop { width: 22px; height: 22px; }
+nav a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 600; margin-left: 20px; }
 nav a:hover { color: var(--wine); }
-h1 { font-size: 34px; line-height: 1.2; letter-spacing: -0.02em; color: var(--wine); margin-bottom: 12px; }
-h2 { font-size: 20px; letter-spacing: -0.01em; color: var(--wine); margin: 36px 0 8px; }
-p, li { font-size: 16px; color: var(--ink); }
+
+/* ---- hero ------------------------------------------------------------ */
+.hero {
+  display: grid; grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px; align-items: center;
+  padding: 40px 0 64px;
+}
+.hero h1 {
+  font-size: clamp(38px, 5.4vw, 56px);
+  line-height: 1.06; letter-spacing: -0.03em;
+  color: var(--wine); font-weight: 800;
+  margin-bottom: 18px;
+}
+.hero .sub { font-size: 18px; color: var(--muted); max-width: 42ch; margin-bottom: 28px; }
+.cta {
+  display: inline-block; background: var(--wine); color: #fff; text-decoration: none;
+  font-weight: 800; font-size: 16px; padding: 16px 32px; border-radius: 999px;
+  box-shadow: 0 10px 24px rgba(92, 44, 69, 0.28);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.cta:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(92, 44, 69, 0.32); }
+.cta-note { display: block; margin-top: 14px; font-size: 13px; color: var(--muted); }
+
+/* ---- phone mockup (a faithful mini of the app home) ------------------- */
+.phone-wrap { display: flex; justify-content: center; }
+.phone {
+  width: 290px; padding: 14px; border-radius: 46px;
+  background: var(--wine-deep);
+  box-shadow: 0 30px 60px rgba(71, 32, 53, 0.35);
+  transform: rotate(2.5deg);
+}
+.screen {
+  background: var(--cream); border-radius: 34px; padding: 18px 14px 12px;
+  display: flex; flex-direction: column; gap: 10px; overflow: hidden;
+}
+.screen .hi { font-size: 12px; color: var(--muted); padding: 0 4px 2px; }
+.screen .hi strong { color: var(--ink); }
+.mini-hero {
+  background: var(--card); border-radius: 20px; padding: 16px 12px; text-align: center;
+  box-shadow: 0 1px 2px rgba(92, 44, 69, 0.06);
+}
+.mini-hero .eyebrow { font-size: 9px; letter-spacing: 0.18em; font-weight: 700; color: var(--muted); text-transform: uppercase; }
+.mini-hero .big { font-size: 30px; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); line-height: 1.15; }
+.mini-hero .side { font-size: 11px; color: var(--muted); }
+.mini-card {
+  background: var(--card); border-radius: 20px; padding: 12px;
+  box-shadow: 0 1px 2px rgba(92, 44, 69, 0.06);
+}
+.mini-card .lab { font-size: 9px; letter-spacing: 0.18em; font-weight: 700; color: var(--muted); text-transform: uppercase; margin-bottom: 2px; }
+.mini-card .num { font-size: 22px; font-weight: 800; color: var(--wine); }
+.mini-card .num small { font-size: 12px; color: var(--muted); font-weight: 600; }
+.mini-card .row2 { font-size: 11px; color: var(--muted); border-top: 1px solid #eee5da; margin-top: 8px; padding-top: 8px; }
+.mini-pill {
+  background: var(--pink); border-radius: 14px; padding: 9px 12px;
+  font-size: 11px; font-weight: 700; color: var(--wine);
+  display: flex; justify-content: space-between;
+}
+.mini-pill span:last-child { font-weight: 500; color: var(--muted); }
+.mini-tabs {
+  display: flex; justify-content: space-around; align-items: center;
+  padding: 10px 6px 2px; color: #b9a9b1; font-size: 9px; font-weight: 700;
+}
+.mini-tabs .fab {
+  width: 40px; height: 40px; border-radius: 50%; background: var(--wine);
+  display: flex; align-items: center; justify-content: center; margin-top: -14px;
+  color: #fff; font-size: 18px; font-weight: 400;
+  box-shadow: 0 6px 14px rgba(92, 44, 69, 0.35);
+}
+.mini-tabs .on { color: var(--wine); }
+
+/* ---- sections --------------------------------------------------------- */
+section.block { padding: 34px 0; }
+.kicker {
+  font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+  font-weight: 800; color: var(--muted); margin-bottom: 8px;
+}
+section.block > h2 {
+  font-size: clamp(26px, 3.4vw, 34px); letter-spacing: -0.02em;
+  color: var(--wine); font-weight: 800; margin-bottom: 24px; line-height: 1.15;
+}
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.feature {
+  background: var(--card); border-radius: var(--r); padding: 24px;
+  box-shadow: 0 1px 2px rgba(92, 44, 69, 0.06);
+}
+.feature .icon {
+  width: 44px; height: 44px; border-radius: 14px; background: var(--wine-soft);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
+}
+.feature .icon svg { width: 22px; height: 22px; stroke: var(--wine); }
+.feature h3 { font-size: 17px; font-weight: 800; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 6px; }
+.feature p { font-size: 14.5px; color: var(--muted); }
+
+/* ---- manifesto band ---------------------------------------------------- */
+.band {
+  background: var(--wine); color: #fff; border-radius: 28px;
+  padding: 48px 40px; margin: 34px 0; text-align: center;
+}
+.band h2 { font-size: clamp(24px, 3.2vw, 32px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 12px; }
+.band p { font-size: 16.5px; color: #e9d5e1; max-width: 56ch; margin: 0 auto; }
+
+/* ---- bottom cta -------------------------------------------------------- */
+.final { text-align: center; padding: 40px 0 8px; }
+.final h2 { font-size: clamp(26px, 3.4vw, 34px); color: var(--wine); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 20px; }
+
+/* ---- legal pages ------------------------------------------------------- */
+.legal { max-width: 680px; }
+.legal h1 { font-size: 34px; line-height: 1.2; letter-spacing: -0.02em; color: var(--wine); font-weight: 800; margin-bottom: 12px; }
+.legal h2 { font-size: 20px; letter-spacing: -0.01em; color: var(--wine); font-weight: 800; margin: 36px 0 8px; }
+.legal p, .legal li { font-size: 16px; }
+.legal ul { padding-left: 22px; margin: 8px 0; }
+.legal li { margin: 4px 0; }
+.updated { font-size: 13px; color: var(--muted); margin-bottom: 32px; }
 .muted { color: var(--muted); }
-ul { padding-left: 22px; margin: 8px 0; }
-li { margin: 4px 0; }
 .card {
   background: var(--card); border-radius: 20px; padding: 24px;
   margin: 16px 0; box-shadow: 0 1px 2px rgba(92, 44, 69, 0.06);
 }
-.cta {
-  display: inline-block; background: var(--wine); color: #fff; text-decoration: none;
-  font-weight: 700; padding: 14px 28px; border-radius: 999px; margin-top: 24px;
-}
-footer { margin-top: 64px; font-size: 13px; color: var(--muted); }
+
+footer { margin-top: 56px; font-size: 13px; color: var(--muted); text-align: center; }
 footer a { color: var(--muted); }
-.updated { font-size: 13px; color: var(--muted); margin-bottom: 32px; }
+
+/* ---- responsive -------------------------------------------------------- */
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; gap: 36px; padding-top: 16px; }
+  .grid, .grid3 { grid-template-columns: 1fr; }
+  .phone { transform: rotate(0deg); }
+  .band { padding: 36px 24px; }
+}

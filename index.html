@@ -8,12 +8,20 @@
   <meta property="og:title" content="Milk Run — calm breastmilk tracking" />
   <meta property="og:description" content="Pumping is hard. Tracking it shouldn't be. Pumping, nursing, and your milk stash in one calm place." />
   <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="wrap">
     <header class="site">
-      <a class="brand" href="./">Milk Run</a>
+      <a class="brand" href="./">
+        <svg class="drop" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 3c3.2 4.2 6 7.6 6 11a6 6 0 1 1-12 0c0-3.4 2.8-6.8 6-11z" fill="#5c2c45"/>
+        </svg>
+        Milk Run
+      </a>
       <nav>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
@@ -21,59 +29,116 @@
       </nav>
     </header>
 
-    <h1>Pumping is hard.<br />Tracking it shouldn't be.</h1>
-    <p class="muted">
-      Milk Run keeps your pumping, nursing, and milk stash in one calm place —
-      and does the math you're doing at 3am: how much to bring, how long
-      you're covered, which side is next.
-    </p>
+    <section class="hero">
+      <div>
+        <h1>Pumping is hard.<br />Tracking it shouldn't be.</h1>
+        <p class="sub">
+          Milk Run keeps pumping, nursing, and your milk stash in one calm
+          place — and does the math you're doing at 3am: how much to bring,
+          how long you're covered, which side is next.
+        </p>
+        <!-- Swap for the real App Store badge + link at launch -->
+        <a class="cta" href="mailto:itsannlin@gmail.com?subject=Milk%20Run%20launch%20list&body=Tell%20me%20when%20Milk%20Run%20is%20on%20the%20App%20Store.">
+          Coming soon — get launch email
+        </a>
+        <span class="cta-note">iPhone · free week to start · no ads, ever</span>
+      </div>
 
-    <!-- Swap for the real badge at launch:
-         <a href="https://apps.apple.com/app/idXXXXXXXXX"><img src="app-store-badge.svg" alt="Download on the App Store" /></a> -->
-    <a class="cta" href="mailto:itsannlin@gmail.com?subject=Milk%20Run%20launch%20list&body=Tell%20me%20when%20Milk%20Run%20is%20on%20the%20App%20Store.">
-      Coming soon — get launch email
-    </a>
+      <div class="phone-wrap" aria-hidden="true">
+        <div class="phone">
+          <div class="screen">
+            <div class="hi">Hi, <strong>Sarah</strong></div>
+            <div class="mini-hero">
+              <div class="eyebrow">Anton last fed</div>
+              <div class="big">1h 4m ago</div>
+              <div class="side">Nursed · left</div>
+            </div>
+            <div class="mini-card">
+              <div class="lab">Today</div>
+              <div class="num">4.5 <small>oz pumped · 2 sessions</small></div>
+              <div class="row2"><strong>3 feeds</strong> today · 2 at the breast</div>
+            </div>
+            <div class="mini-pill"><span>Next side: Right</span><span>last on left</span></div>
+            <div class="mini-tabs">
+              <span class="on">Home</span><span>Stash</span>
+              <span class="fab">+</span>
+              <span>Stats</span><span>History</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="card">
-      <h2 style="margin-top:0">Built for how feeding actually goes</h2>
-      <ul>
-        <li><strong>Exclusively pumping</strong> — session goals, daily totals, and a bring-to-destination calculator for NICU, daycare, or grandma's that's right on the first day.</li>
-        <li><strong>Breast and bottle</strong> — stash runway, a cover check for the day, and your at-breast balance over time.</li>
-        <li><strong>Mostly nursing</strong> — when baby last fed and which side is next, remembered for you.</li>
-        <li><strong>Twins</strong> — per-baby logs, next-side memory for each.</li>
-      </ul>
-      <p class="muted" style="margin-top:8px">
-        Your rhythm changes as your baby grows — switch modes any time and
-        the whole dashboard reshapes itself.
-      </p>
-    </div>
+    <section class="block">
+      <div class="kicker">What it does</div>
+      <h2>The numbers you're holding in your head, held for you</h2>
+      <div class="grid">
+        <div class="feature">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8M9 2v4l-4 9a4 4 0 0 0 4 5h6a4 4 0 0 0 4-5l-4-9V2"/><path d="M7 15h10"/></svg>
+          </div>
+          <h3>A stash that stays honest</h3>
+          <p>Log what you pump, where it goes, what baby eats. Fridge, freezer, deep freeze, daycare — reconciled, with expirations flagged before they bite.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="13" height="12" rx="2"/><path d="M16 11h3l2 3v5h-5M7 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
+          </div>
+          <h3>Bring-to-destination math</h3>
+          <p>NICU, daycare, grandma's — Milk Run knows what's already there and tells you exactly how much to bring to stay stocked through the week.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 4 6-8 3 4"/><path d="M3 21h18"/></svg>
+          </div>
+          <h3>Trends that calm, not alarm</h3>
+          <p>Supply moves in weeks, not days. Weekly trends, per-side patterns, and days-of-cover — framed to inform you, never to scare you.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 21v-2a4 4 0 0 0-3-3.87"/></svg>
+          </div>
+          <h3>Share the feeds</h3>
+          <p>Invite your partner or a caregiver. Every bottle they give shows up on your phone, every pump you log shows up on theirs. The night shift finally has a handover document.</p>
+        </div>
+      </div>
+    </section>
 
-    <div class="card">
-      <h2 style="margin-top:0">Share the feeds</h2>
-      <p>
-        Invite your partner or a caregiver. Every bottle they give from the
-        stash shows up on your phone; every pump you log shows up on theirs.
-        The night shift finally has a handover document.
-      </p>
-    </div>
+    <section class="block">
+      <div class="kicker">Every phase</div>
+      <h2>Tell it where your baby is fed — it reshapes itself</h2>
+      <div class="grid3">
+        <div class="feature">
+          <h3>Exclusively pumping</h3>
+          <p>Session goals, daily totals, and the bring calculator front and center — right on the first day.</p>
+        </div>
+        <div class="feature">
+          <h3>Breast and bottle</h3>
+          <p>Stash runway, a cover check for the day, and your at-breast balance over time.</p>
+        </div>
+        <div class="feature">
+          <h3>Mostly nursing</h3>
+          <p>When baby last fed and which side is next — remembered for you, even at 3am.</p>
+        </div>
+      </div>
+    </section>
 
-    <div class="card">
-      <h2 style="margin-top:0">No guilt, by design</h2>
+    <div class="band">
+      <h2>No guilt, by design</h2>
       <p>
         No streaks. No red numbers. A missed session never resets anything or
-        scolds you. Built by a parent, for parents doing an unreasonably hard
-        thing.
+        scolds you. Your data lives on your device — an account is only for
+        sync and sharing, and there are no ads or trackers, ever. Built by a
+        parent, for parents doing an unreasonably hard thing.
       </p>
     </div>
 
-    <div class="card">
-      <h2 style="margin-top:0">Private by default</h2>
-      <p>
-        Your data lives on your device — an account is only needed for sync
-        and sharing. No ads, no trackers, no data selling, ever. Export
-        everything to CSV whenever you like.
-      </p>
-    </div>
+    <section class="final">
+      <h2>Your 3am math, retired.</h2>
+      <a class="cta" href="mailto:itsannlin@gmail.com?subject=Milk%20Run%20launch%20list&body=Tell%20me%20when%20Milk%20Run%20is%20on%20the%20App%20Store.">
+        Coming soon — get launch email
+      </a>
+    </section>
 
     <footer>
       © 2026 Milk Run · <a href="privacy.html">Privacy</a> ·
